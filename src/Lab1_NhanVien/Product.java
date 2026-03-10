@@ -1,4 +1,4 @@
-package lab1;
+package Lab1_NhanVien;
 
 public class Product {
 	private String id;
@@ -56,5 +56,5 @@ public class Product {
 	public double finalPrice() {
 		return this.basePrice;
 	}
-	
+
 }

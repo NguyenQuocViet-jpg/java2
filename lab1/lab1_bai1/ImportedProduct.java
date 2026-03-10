@@ -1,4 +1,4 @@
-package Lab1_NhanVien;
+package lab1_bai1;
 
 public class ImportedProduct extends Product{
 	private double importTaxRate;

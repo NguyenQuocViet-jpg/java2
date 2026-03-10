@@ -1,6 +1,7 @@
-package Lab1_NhanVien;
+package lab1_bai1;
 
 import java.util.ArrayList;
+
 
 public class Main {
 	public static void main(String[] args) {

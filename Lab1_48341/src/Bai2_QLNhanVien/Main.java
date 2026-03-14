@@ -40,7 +40,7 @@ public class Main {
 		String xuat = sc.nextLine().trim();
 		if(xuat.equalsIgnoreCase("fulltime")) {
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-13s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Tiền Thưởng", "Tiền Phạt", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("-----------------------------------------------------------------------------------------");
 			for(Employee moi: danhsach)
 				if(moi instanceof FullTimeEmployee) 
 					System.out.printf("%-5s | %-20s | %-13.2f | %-13.2f | %-13.2f | %-13.2f\n", 
@@ -52,7 +52,7 @@ public class Main {
 							moi.incom());
 		}else if(xuat.equalsIgnoreCase("parttime")) {
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-20s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Giờ Làm", "Mức Lương Theo Giờ", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------");
 			for(Employee moi: danhsach)
 				if(moi instanceof ParttimeEmployee)
 					System.out.printf("%-5s | %-20s | %-13.2f | %-13.2f | %-20.2f | %-13.2f\n", 
@@ -66,7 +66,7 @@ public class Main {
 		}else if(xuat.equalsIgnoreCase("all")) {
 			System.out.println("--- Nhân viên FullTime ---");
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-13s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Tiền Thưởng", "Tiền Phạt", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("-----------------------------------------------------------------------------------------");
 			for(Employee moi: danhsach)
 				if(moi instanceof FullTimeEmployee) 
 					System.out.printf("%-5s | %-20s | %-13.2f | %-13.2f | %-13.2f | %-13.2f\n", 
@@ -80,7 +80,7 @@ public class Main {
 			System.out.println("\n". repeat(5));
 			System.out.println("--- Nhân viên PartTime ---");
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-20s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Giờ Làm", "Mức Lương Theo Giờ", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------");
 			for(Employee moi: danhsach)
 				if(moi instanceof ParttimeEmployee)
 					System.out.printf("%-5s | %-20s | %-13.2f | %-13.2f | %-20.2f | %-13.2f\n", 
@@ -105,10 +105,10 @@ public class Main {
 		}
 		if(max instanceof FullTimeEmployee) {
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-13s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Tiền Thưởng", "Tiền Phạt", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("-----------------------------------------------------------------------------------------");
 		}else if(max instanceof ParttimeEmployee) {
 			System.out.printf("%-5s | %-20s | %-13s | %-13s | %-20s | %-13s\n", "ID", "Họ và Tên", "Lương Cơ Bản", "Giờ Làm", "Mức Lương Theo Giờ", "Tổng Lương");
-			System.out.println("--------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------");
 		}
 		
 		System.out.printf("%-5s | %-20s | %-13.2f | %-13.2f | %-13.2f | %-13.2f\n", 

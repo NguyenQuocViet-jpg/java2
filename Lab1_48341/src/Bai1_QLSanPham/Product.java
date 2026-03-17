@@ -1,19 +1,23 @@
 package Bai1_QLSanPham;
 
+import java.util.Scanner;
+
 public class Product {
 	private String id;
 	private String name;
 	private double basePrice;
 	
 	
-	public String getid() {
+	public String getId() {
 		return this.id;
 	}
-	public void setid(String id) {
-		if(id == null || id.isEmpty())
-			System.out.println("ID Không được rỗng.");
-		else 
+	public boolean setId(String id) {
+		if(id != null && !id.trim().isEmpty()) {
 			this.id = id;
+			return true;
+		}
+		else 
+			return false;
 	}
 	
 	public String getName() {
@@ -26,11 +30,12 @@ public class Product {
 	public double getBasePrice() {
 		return this.basePrice;
 	}
-	public void setBasePrice(double basePrice) {
-		if(basePrice < 0)
-			System.out.println("BasePrice < 0 ? ");
-		else 
+	public boolean setBasePrice(double basePrice) {
+		if(basePrice >= 0) {
 			this.basePrice = basePrice;
+			return true;
+		}else
+			return false;			
 	}
 	
 	public Product() {}
@@ -41,11 +46,37 @@ public class Product {
 		this.basePrice = basePrice;
 	}
 	
+	public void input(Scanner sc) {
+		while(true) {
+				System.out.print("Nhập id: ");
+				String Name = sc.nextLine().trim();
+				if(setId(Name)) break;
+				else System.out.println("Id không được rỗng");
+		}
+		
+		System.out.print("Nhập tên: ");
+		setName(sc.nextLine().trim());
+		
+		while(true) {
+			try {
+				System.out.print("Nhập giá: ");
+				double price = sc.nextLong();
+				sc.nextLine();
+				if(setBasePrice(price))break;
+				else System.out.println("Giá phải >= 0");
+			}catch (Exception e) {
+				System.out.println("Vui lòng nhập số!");
+				sc.nextLine();
+			}
+		}
+
+	}
+	
 	public double finalPrice() {
 		return this.basePrice;
 	}
 	public String toString() {
-		return this.id + " | " + this.name + " | " + this.basePrice;
+		return this.id + " | " + this.name + " | " + finalPrice();
 	}
 
 }

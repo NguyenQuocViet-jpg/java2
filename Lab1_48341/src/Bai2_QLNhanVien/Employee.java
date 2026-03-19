@@ -10,11 +10,15 @@ public class Employee {
 	public String getid() {
 		return this.id;
 	}
-	public void setid(String id) {
-		if(id == null || id.isEmpty())
-			System.out.println("Id NULL");
-		else
+	public boolean setid(String id) {
+		if(id != null && !id.isEmpty()) {
 			this.id = id;
+			return true;
+		}
+		else {
+			this.id = "Error";
+			return false;
+		}
 	}
 	
 	public String getName() {
@@ -27,35 +31,52 @@ public class Employee {
 	public double getbasicSalary() {
 		return this.basicSalary;
 	}
-	public void setbasicSalary(double basicSalary) {
-		if(basicSalary < 0)
-			System.out.println("basicSalary đang âm");
-		else
+	public boolean setbasicSalary(double basicSalary) {
+		if(basicSalary >= 0) {
 			this.basicSalary = basicSalary;
+			return true;
+		}
+		else {
+			System.out.print("Error");
+			return false;
+		}
+			
 	}
 	
 	public Employee() {}
 	
 	public Employee(String id, String name, double basicSalary) {
-		this.id = id;
+		setid(id);
 		this.name = name;
-		this.basicSalary = basicSalary;
+		setbasicSalary(basicSalary);
 	}
 	
 	public void input(Scanner sc) {
-		System.out.print("Nhập id: ");
-		setid(sc.nextLine().trim());
+		while(true) {
+			try {
+				System.out.print("Nhập id: ");
+				String Id = sc.nextLine().trim();
+				sc.nextLine();
+				if(setid(Id)) break;
+				else System.out.println("Id không Được rỗng");
+			} catch (Exception e) {
+				System.out.println("Vui lòng nhập số!");
+				sc.nextLine();
+			}
+		}
+		
 		System.out.print("Nhập Name: ");
 		setName(sc.nextLine().trim());
 		
 		while(true) {
 			try {
 				System.out.print("Nhập basicSalary: ");
-				setbasicSalary(sc.nextDouble());
+				double Salary = sc.nextDouble();
 				sc.nextLine();
-				break;
+				if(setbasicSalary(Salary)) break;
+				else System.out.println("BasicSalary >= 0");
 			}catch (Exception e) {
-				System.out.println("VUi lòng nhập số !");
+				System.out.println("Vui lòng nhập số !");
 				sc.nextLine();
 			}
 		}

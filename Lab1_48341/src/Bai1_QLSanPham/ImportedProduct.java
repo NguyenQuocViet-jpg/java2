@@ -34,8 +34,15 @@ public class ImportedProduct extends Product{
 	
 	public ImportedProduct(String id, String name, double basePrice, double importTaxRate, double shippingFee) {
 		super(id, name, basePrice);
-		this.importTaxRate = importTaxRate;
-		this.shippingFee = shippingFee;
+		if(setimportTaxRate(importTaxRate))
+			this.importTaxRate = importTaxRate;
+		else 
+			this.importTaxRate = -1;
+		
+		if(setshipPingFee(shippingFee))
+			this.shippingFee = shippingFee;
+		else 
+			this.shippingFee = -1;
 	}
 	@Override public void input(Scanner sc) {
 		super.input(sc);

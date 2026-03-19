@@ -9,29 +9,37 @@ public class FullTimeEmployee extends Employee{
 	public double getBonus() {
 		return this.bonus;
 	}
-	public void setBonus(double bonus) {
-		if(bonus < 0)
-			System.out.println("Bonus < 0");
-		else 
+	public boolean setBonus(double bonus) {
+		if(bonus >= 0) {
 			this.bonus = bonus;
+			return true;
+		}
+		else {
+			System.out.print("Error");
+			return false;
+		}
 	}
 	
 	public double getpenalty() {
 		return this.penalty;
 	}
-	public void setpenalty(double penalty) {
-		if(penalty < 0)
-			System.out.println("Penalty < 0");
-		else 
+	public boolean setpenalty(double penalty) {
+		if(penalty >= 0) {
 			this.penalty = penalty;
+			return true;
+		}
+		else {
+			System.out.print("Error");
+			return false;
+		}
 	}
 	
 	public FullTimeEmployee() {}
 	
 	public FullTimeEmployee(String id, String name, double basicSalary, double bonus, double penalty) {
 		super(id, name, basicSalary);
-		this.bonus = bonus;
-		this.penalty = penalty;
+		setBonus(bonus);
+		setpenalty(penalty);
 	}
 	
 	@Override 
@@ -40,11 +48,12 @@ public class FullTimeEmployee extends Employee{
 		while(true) {
 			try {
 				System.out.print("Nhập bonus: ");
-				setBonus(sc.nextDouble());
+				double boNus = sc.nextDouble();
 				sc.nextLine();
-				break;
+				if(setBonus(boNus)) break;
+				else System.out.println("Bonus >= 0");
 			}catch (Exception e) {
-				System.out.println("VUi lòng nhập số !");
+				System.out.println("Vui lòng nhập số !");
 				sc.nextLine();
 			}
 		}
@@ -52,11 +61,12 @@ public class FullTimeEmployee extends Employee{
 		while(true) {
 			try {
 				System.out.print("Nhập penalty: ");
-				setpenalty(sc.nextDouble());
+				double penalTy = sc.nextDouble();
 				sc.nextLine();
-				break;
+				if(setpenalty(penalTy)) break;
+				else System.out.println("Penalty >= 0");
 			}catch (Exception e) {
-				System.out.println("VUi lòng nhập số !");
+				System.out.println("Vui lòng nhập số !");
 				sc.nextLine();
 			}
 		}

@@ -41,9 +41,15 @@ public class Product {
 	public Product() {}
 	
 	public Product(String id, String name, double basePrice) {
-		this.id = id;
+		if(setId(id))
+			this.id = id;
+		else 
+			this.id = null;
 		this.name = name;
-		this.basePrice = basePrice;
+		if(setBasePrice(basePrice))
+			this.basePrice = basePrice;
+		else 
+			this.basePrice = -1;
 	}
 	
 	public void input(Scanner sc) {

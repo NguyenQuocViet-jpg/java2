@@ -9,29 +9,38 @@ public class ParttimeEmployee extends Employee{
 	 public double getworkingHourse() {
 		 return this.workingHours;
 	 }
-	 public void setworkingHourse(double workingHourse) {
-		 if(workingHourse < 0)
-			 System.out.println("workingHourse < 0");
-		 else 
+	 public boolean setworkingHourse(double workingHourse) {
+		 if(workingHourse >= 0) {
 			 this.workingHours = workingHourse;
+			 return true;
+		 }
+		 else {
+			 System.out.print("Error");
+			 return false;
+		 }
+			 
 	 }
 	 
 	 public double gethourlyRate() {
 		 return this.hourlyRate;
 	 }
-	 public void sethourlyRate(double hourlyRate) {
-		 if(hourlyRate < 0)
-			 System.out.println("hourlyRate < 0");
-		 else 
+	 public boolean sethourlyRate(double hourlyRate) {
+		 if(hourlyRate < 0) {
 			 this.hourlyRate = hourlyRate;
+			 return true;
+		 }
+		 else {
+			 System.out.print("Error");
+			 return false;
+		 }
 	 }
 	 
 	 public ParttimeEmployee() {}
 	 
 	 public ParttimeEmployee(String id, String name, double basicSalary, double workingHours, double hourlyRate) {
 		 super(id, name, basicSalary);
-		 this.workingHours = workingHours;
-		 this.hourlyRate = hourlyRate;
+		 setworkingHourse(workingHours);
+		 sethourlyRate(hourlyRate);
 	 }
 	 
 	 @Override
@@ -40,11 +49,12 @@ public class ParttimeEmployee extends Employee{
 		 while(true) {
 				try {
 					System.out.print("Nhập workingHourse: ");
-					setworkingHourse(sc.nextDouble());
+					double workinghourse = sc.nextDouble();
 					sc.nextLine();
-					break;
+					if(setworkingHourse(workinghourse)) break;
+					else System.out.println("WorkingHourse >= 0");
 				}catch (Exception e) {
-					System.out.println("VUi lòng nhập số !");
+					System.out.println("Vui lòng nhập số !");
 					sc.nextLine();
 				}
 			}
@@ -52,11 +62,12 @@ public class ParttimeEmployee extends Employee{
 		 while(true) {
 				try {
 					System.out.print("Nhập hourlyRate: ");
-					sethourlyRate(sc.nextDouble());
+					double hourlyrate = sc.nextDouble();
 					sc.nextLine();
-					break;
+					if(sethourlyRate(hourlyrate)) break;
+					else System.out.println("HourlyRate >= 0");
 				}catch (Exception e) {
-					System.out.println("VUi lòng nhập số !");
+					System.out.println("Vui lòng nhập số !");
 					sc.nextLine();
 				}
 			}

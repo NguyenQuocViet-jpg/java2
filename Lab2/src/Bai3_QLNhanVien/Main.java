@@ -92,7 +92,6 @@ public class Main {
 			case 4:
 				System.out.println("-------------------------------------");
 				service.hienthidanhsach();
-				System.out.println("-------------------------------------");
 				System.out.print("Nhập mã nhân viên cần sửa lương: ");
 				String maSua = sc.nextLine().trim();
 				
@@ -129,7 +128,5 @@ public class Main {
             System.out.println("\n". repeat(100));
 		} while ( chon != 0);
 		sc.close();
-	
 	}
-
 }

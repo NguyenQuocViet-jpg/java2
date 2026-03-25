@@ -11,9 +11,9 @@ public class Main {
 				Arrays.asList(new Employee("48341", "Viet", 15000000),
 						new Employee("48351", "Khang", 14000000),
 						new Employee("47406", "Quang", 17000000),
-						new Employee("48306", "Hai", 12000000),
-						new Employee("49306", "Khoy", 20000000),
-						new Employee("47809", "Binh", 18000000)
+						new Employee("48306", "Alex", 12000000),
+						new Employee("49306", "anh", 20000000),
+						new Employee("47809", "An", 18000000)
 						)
 				);
 		
@@ -32,6 +32,10 @@ public class Main {
 			.map(s -> s.getName())
 			.forEach(System.out::println);
 		
-		
+		System.out.print("- Đếm số nhân viên có tên bắt đầu bằng chữ A: ");
+		long count = nv.stream()
+						.filter(s -> s.getName().toLowerCase().startsWith("a"))
+						.count();
+		System.out.print(count);
 	}
 }

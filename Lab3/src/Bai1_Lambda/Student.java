@@ -8,8 +8,14 @@ public class Student {
 	public String getId() {
 		return this.id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public boolean setId(String id) {
+		if(id != null && !id.isEmpty()) {
+			this.id = id;
+			return true;
+		}else {
+			this.id = null;
+			return false;
+		}
 	}
 	
 	public String getName() {
@@ -22,8 +28,14 @@ public class Student {
 	public double getDiem() {
 		return this.diem;
 	}
-	public void setDiem(double diem) {
-		this.diem = diem;
+	public boolean setDiem(double diem) {
+		if(diem >= 0 & diem <= 10) {
+			this.diem = diem;
+			return true;
+		}else {
+			this.diem = -1;
+			return false;
+		}
 	}
 	
 	public Student() {}

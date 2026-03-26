@@ -32,7 +32,7 @@ public class Main {
 			.map(s -> s.getName())
 			.forEach(System.out::println);
 		
-		System.out.print("- Đếm số nhân viên có tên bắt đầu bằng chữ A: ");
+		System.out.print("- số nhân viên có tên bắt đầu bằng chữ A: ");
 		long count = nv.stream()
 						.filter(s -> s.getName().toLowerCase().startsWith("a"))
 						.count();

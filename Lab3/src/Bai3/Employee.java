@@ -8,8 +8,14 @@ public class Employee {
 	public String getId() {
 		return this.id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public boolean setId(String id) {
+		if(id != null && !id.isEmpty()) {
+			this.id = id;
+			return true;
+		}else {
+			this.id = null;
+			return false;
+		}
 	}
 	
 	public String getName() {
@@ -22,8 +28,14 @@ public class Employee {
 	public double getSalary() {
 		return this.salary;
 	}
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public boolean setSalary(double salary) {
+		if(salary >= 0) {
+			this.salary = salary;
+			return true;
+		}else {
+			this.salary = -1;
+			return false;
+		}
 	}
 	
 	public Employee() {}
@@ -33,9 +45,13 @@ public class Employee {
 		this.name = name;
 		this.salary = salary;
 	}
-	
 	@Override
 	public String toString() {
-		return String.format(" %-10s | %-25s | %.2f", this.id, this.name, this.salary);
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
+	
+//	@Override
+//	public String toString() {
+//		return String.format(" %-10s | %-25s | %.2f\n", this.id, this.name, this.salary);
+//	}
 }

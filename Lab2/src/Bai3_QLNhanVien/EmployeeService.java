@@ -7,7 +7,7 @@ public class EmployeeService {
 	private List<Employee> listEmployees = new ArrayList<Employee>();
 	
 	public void addEmployee( Employee them) {
-		if( them != null && them.getId() != null) {
+		if( them != null && them.getId() != null) { //listEmployees. ) {  kiểm xem id có tồn hay không 
 			listEmployees.add(them);
 			System.out.println("Đã thêm nhân viên");
 			

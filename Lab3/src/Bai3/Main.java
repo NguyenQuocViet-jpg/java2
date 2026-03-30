@@ -31,23 +31,15 @@ public class Main {
 						.orElse(null);
 //		System.out.println(max);
 		
-		List<Employee> luongCaoI = nv.stream()
-				.filter(s -> s.getSalary() == max.getSalary())
-				.toList();
+
 		
 		nv.stream()
 		.filter(s -> s.getSalary() == max.getSalary())
 		.limit(1)
 		.forEach(System.out::println);
-		System.out.println("--- Nhân viên có lương cao nhất ---");
-		System.out.printf(" %-10s | %-25s | %s\n", "ID", "Name", "Salary");
-		System.out.println("--------------------------------------------------");
-		luongCaoI.forEach(e -> 
-		    System.out.printf("%-10s | %-15s | %-10.2f\n",
-		        e.getId(),
-		        e.getName(),
-		        e.getSalary()
-		    )
-		);		
+//		System.out.println("--- Nhân viên có lương cao nhất ---");
+//		System.out.printf(" %-10s | %-25s | %s\n", "ID", "Name", "Salary");
+//		System.out.println("--------------------------------------------------");
+			
 	}
 }

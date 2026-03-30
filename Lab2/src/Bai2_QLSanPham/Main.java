@@ -16,7 +16,7 @@ public class Main {
 		Product sp5 = new Product("clo01", "áo dài", 500000, ProductCasegory.CLOTHING);
 		Product sp6 = new Product("clo02", "suit", 5000000, ProductCasegory.CLOTHING);
 		Product sp7 = new Product("fod03", "caffe", 25000, ProductCasegory.FOOD);
-		Product sp8 = new Product("Elec03", "tai nghe", 5000000, ProductCasegory.ELECTRONIC);
+		Product sp8 = new Product("", "tai nghe", 5000000, ProductCasegory.ELECTRONIC);
 		
 		DanhSach.add(sp1);
 		DanhSach.add(sp2);

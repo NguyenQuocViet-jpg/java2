@@ -1,5 +1,7 @@
 package Bai1;
 
-public class StudentType {
-
+public enum StudentType {
+	REGULAR, 
+	PART_TIME, 
+	INTERNATIONAL
 }

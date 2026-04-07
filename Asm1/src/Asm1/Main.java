@@ -87,7 +87,10 @@ public class Main {
                             }
 
                             System.out.print("Thêm tiếp? (Y/N): ");
-                        } while (sc.nextLine().equalsIgnoreCase("Y"));
+                            String tiep = sc.nextLine().trim();
+                            if(tiep.equalsIgnoreCase("n"))
+                            	break;
+                        } while (true);
                     } else {
                         System.out.println("Không tìm thấy tài liệu!");
                     }

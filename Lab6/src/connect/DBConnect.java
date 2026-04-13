@@ -14,6 +14,7 @@ public class DBConnect {
 		try {
 			conn = DriverManager.getConnection(URL, USER, PASSWORD);
 			System.out.println("Kết nối dữ liệu thành công");
+			
 		}catch (SQLException e) {
 			System.err.println("Error: " + e.getMessage());
 			e.printStackTrace();

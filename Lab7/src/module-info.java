@@ -4,11 +4,9 @@
 /**
  * 
  */
-module PS47406_Lab6 {
+module Lab7 {
 	requires java.sql;
 	requires java.base;
 	requires java.xml.crypto;
 	requires  static lombok;
-	
-   
 }

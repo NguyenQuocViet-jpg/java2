@@ -1,15 +1,12 @@
 package main; 
 
 import entity.Student;
-import entity.Tree;
 import repository.StudentRepository;
-import repository.TreeRepository;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner sc = new Scanner(System.in);
     private static StudentRepository studentRepo = new StudentRepository();
-    private static TreeRepository treeRepo = new TreeRepository();
 
     public static void main(String[] args) {
         int choice;
@@ -18,7 +15,6 @@ public class Main {
             System.out.println("1. Hiển thị tất cả sinh viên");
             System.out.println("2. Tìm kiếm sinh viên theo ID");
             System.out.println("3. Thêm sinh viên mới");
-            System.out.println("4. Quản lý cây (Tree - Hiển thị & Tìm)");
             System.out.println("0. Thoát");
             System.out.print("Mời bạn chọn: ");
             
@@ -30,13 +26,11 @@ public class Main {
                     showAllStudents();
                     break;
                 case 2:
+                	showAllStudents();
                     findStudent();
                     break;
                 case 3:
                     addStudent();
-                    break;
-                case 4:
-                    manageTrees();
                     break;
                 case 0:
                     System.out.println("Đang thoát chương trình...");
@@ -83,18 +77,5 @@ public class Main {
 
         Student newStu = new Student(0, name, gender, gpa);
         studentRepo.save(newStu);
-    }
-
-    private static void manageTrees() {
-        System.out.println("\n--- DANH SÁCH CÂY (TREE) ---");
-        treeRepo.findAll().forEach(System.out::println);
-        System.out.print("\nNhập ID cây cần tìm: ");
-        int id = sc.nextInt();
-        Tree tre = treeRepo.findById(id);
-        if (tre != null) {
-            System.out.println("Kết quả: " + tre);
-        } else {
-            System.out.println("=> Không tìm thấy cây!");
-        }
     }
 }
